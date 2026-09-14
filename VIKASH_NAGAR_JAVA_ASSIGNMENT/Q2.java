@@ -1,3 +1,4 @@
+// Question: Write a program that counts how many times each word appears in a sentence.
 import java.util.*;
 
 public class Q2 {

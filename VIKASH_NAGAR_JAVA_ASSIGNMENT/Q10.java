@@ -1,3 +1,4 @@
+// Question: Write a program that reads employee data from database, stores it in a List, and uses Streams + Comparator to find the 2nd highest paid employee.
 import java.util.*;
 import java.util.stream.*;
 

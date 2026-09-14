@@ -1,3 +1,4 @@
+// Question: Write a program to rearrange characters in a string so that no two same characters are adjacent (use PriorityQueue).
 import java.util.*;
 
 public class Q6 {

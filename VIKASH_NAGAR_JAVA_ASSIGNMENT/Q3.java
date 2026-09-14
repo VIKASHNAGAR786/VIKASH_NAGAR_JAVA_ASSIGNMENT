@@ -1,3 +1,4 @@
+// Question: Write a program using HashMap to find two numbers that add up to target in O(n) time.
 import java.util.*;
 
 public class Q3 {

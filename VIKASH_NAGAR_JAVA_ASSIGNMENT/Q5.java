@@ -1,3 +1,4 @@
+// Question: Write a program to find the first unique number in a stream of numbers (you can only traverse once).
 import java.util.*;
 
 public class Q5 {

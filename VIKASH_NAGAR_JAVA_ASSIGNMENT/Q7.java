@@ -1,3 +1,4 @@
+// Question: Write a program to flatten a nested list of integers (example: [[1,2],[3,[4,5]]] -> [1,2,3,4,5]).
 import java.util.*;
 
 public class Q7 {

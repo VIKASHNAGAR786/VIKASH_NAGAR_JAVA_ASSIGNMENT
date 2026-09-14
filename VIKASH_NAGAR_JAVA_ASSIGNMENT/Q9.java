@@ -1,3 +1,4 @@
+// Question: Write a program to sort a list of students by marks (descending). If marks are equal, sort by name.
 import java.util.*;
 
 public class Q9 {

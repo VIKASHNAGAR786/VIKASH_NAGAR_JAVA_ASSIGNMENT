@@ -1,3 +1,4 @@
+// Question: Given a list of transactions (userId, amount), write a program to find the user who spent the maximum total amount.
 import java.util.*;
 import java.util.stream.Collectors;
 

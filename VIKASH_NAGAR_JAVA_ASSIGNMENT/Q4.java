@@ -1,3 +1,4 @@
+// Question: Write a program to find the k most frequently occurring elements in a given array.
 import java.util.*;
 
 public class Q4 {

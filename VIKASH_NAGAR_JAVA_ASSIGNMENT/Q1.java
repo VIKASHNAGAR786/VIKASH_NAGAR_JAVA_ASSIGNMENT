@@ -1,3 +1,4 @@
+// Question: Write a program that removes duplicates from a list while maintaining original order.
 import java.util.*;
 
 public class Q1 {
