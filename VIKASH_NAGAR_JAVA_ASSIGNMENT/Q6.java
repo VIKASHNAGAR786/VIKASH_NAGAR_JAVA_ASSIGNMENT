@@ -2,7 +2,7 @@
 import java.util.*;
 
 public class Q6 {
-    private static class CharacterCount {
+    static class CharacterCount {
         char character;
         int count;
 
@@ -12,10 +12,16 @@ public class Q6 {
         }
     }
 
-    public static String rearrange(String text) {
+    public static void main(String[] args) {
+        String text = "aaabbc";
         Map<Character, Integer> counts = new HashMap<>();
+
         for (char character : text.toCharArray()) {
-            counts.put(character, counts.getOrDefault(character, 0) + 1);
+            if (counts.containsKey(character)) {
+                counts.put(character, counts.get(character) + 1);
+            } else {
+                counts.put(character, 1);
+            }
         }
 
         PriorityQueue<CharacterCount> queue = new PriorityQueue<>(
@@ -36,10 +42,10 @@ public class Q6 {
             previous = current;
         }
 
-        return result.length() == text.length() ? result.toString() : "Not possible";
-    }
-
-    public static void main(String[] args) {
-        System.out.println(rearrange("aaabbc"));
+        if (result.length() == text.length()) {
+            System.out.println(result);
+        } else {
+            System.out.println("Not possible");
+        }
     }
 }

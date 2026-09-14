@@ -2,10 +2,17 @@
 import java.util.*;
 
 public class Q4 {
-    public static List<Integer> topKFrequent(int[] numbers, int k) {
+    public static void main(String[] args) {
+        int[] numbers = {1, 1, 1, 2, 2, 3};
+        int k = 2;
         Map<Integer, Integer> frequencies = new HashMap<>();
+
         for (int number : numbers) {
-            frequencies.put(number, frequencies.getOrDefault(number, 0) + 1);
+            if (frequencies.containsKey(number)) {
+                frequencies.put(number, frequencies.get(number) + 1);
+            } else {
+                frequencies.put(number, 1);
+            }
         }
 
         PriorityQueue<Integer> heap = new PriorityQueue<>(
@@ -19,10 +26,6 @@ public class Q4 {
 
         List<Integer> result = new ArrayList<>(heap);
         result.sort(Comparator.comparingInt(frequencies::get).reversed());
-        return result;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(topKFrequent(new int[] { 1, 1, 1, 2, 2, 3 }, 2));
+        System.out.println(result);
     }
 }

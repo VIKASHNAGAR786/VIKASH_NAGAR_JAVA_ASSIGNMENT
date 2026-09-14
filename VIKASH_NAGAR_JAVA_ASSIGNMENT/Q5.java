@@ -2,22 +2,25 @@
 import java.util.*;
 
 public class Q5 {
-    public static OptionalInt firstUnique(int[] stream) {
+    public static void main(String[] args) {
+        int[] stream = {4, 5, 1, 2, 1, 4, 5};
         Map<Integer, Integer> counts = new LinkedHashMap<>();
+
         for (int number : stream) {
-            counts.put(number, counts.getOrDefault(number, 0) + 1);
+            if (counts.containsKey(number)) {
+                counts.put(number, counts.get(number) + 1);
+            } else {
+                counts.put(number, 1);
+            }
         }
 
         for (Map.Entry<Integer, Integer> entry : counts.entrySet()) {
             if (entry.getValue() == 1) {
-                return OptionalInt.of(entry.getKey());
+                System.out.println("First unique number: " + entry.getKey());
+                return;
             }
         }
-        return OptionalInt.empty();
-    }
 
-    public static void main(String[] args) {
-        OptionalInt result = firstUnique(new int[] { 4, 5, 1, 2, 1, 4, 5 });
-        System.out.println(result.isPresent() ? result.getAsInt() : "No unique number");
+        System.out.println("No unique number");
     }
 }

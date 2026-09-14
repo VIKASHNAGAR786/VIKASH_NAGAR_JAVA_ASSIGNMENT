@@ -2,17 +2,19 @@
 import java.util.*;
 
 public class Q2 {
-    public static Map<String, Integer> countWords(String sentence) {
+    public static void main(String[] args) {
+        String sentence = "Java is fun, and Java is powerful.";
+        String[] words = sentence.toLowerCase().split("\\W+");
         Map<String, Integer> counts = new LinkedHashMap<>();
-        for (String word : sentence.toLowerCase().split("\\W+")) {
-            if (!word.isEmpty()) {
-                counts.put(word, counts.getOrDefault(word, 0) + 1);
+
+        for (String word : words) {
+            if (counts.containsKey(word)) {
+                counts.put(word, counts.get(word) + 1);
+            } else {
+                counts.put(word, 1);
             }
         }
-        return counts;
-    }
 
-    public static void main(String[] args) {
-        System.out.println(countWords("Java is fun, and Java is powerful."));
+        System.out.println(counts);
     }
 }

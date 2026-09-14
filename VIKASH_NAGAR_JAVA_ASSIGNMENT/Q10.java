@@ -22,8 +22,8 @@ public class Q10 {
 
     public static Optional<Employee> secondHighestPaid(List<Employee> employees) {
         return employees.stream()
-                .sorted(Comparator.comparingDouble((Employee employee) -> employee.salary)
-                        .reversed())
+            .sorted((employee1, employee2) ->
+                Double.compare(employee2.salary, employee1.salary))
                 .skip(1)
                 .findFirst();
     }

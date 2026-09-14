@@ -17,19 +17,20 @@ public class Q9 {
         }
     }
 
-    public static void sortStudents(List<Student> students) {
-        students.sort(Comparator.comparingInt((Student student) -> student.marks)
-                .reversed()
-                .thenComparing(student -> student.name));
-    }
-
     public static void main(String[] args) {
         List<Student> students = new ArrayList<>(Arrays.asList(
                 new Student("Ravi", 85),
                 new Student("Anita", 92),
                 new Student("Amit", 92),
                 new Student("Neha", 78)));
-        sortStudents(students);
+
+        students.sort((student1, student2) -> {
+            if (student1.marks != student2.marks) {
+                return student2.marks - student1.marks;
+            }
+            return student1.name.compareTo(student2.name);
+        });
+
         students.forEach(System.out::println);
     }
 }

@@ -2,22 +2,22 @@
 import java.util.*;
 
 public class Q7 {
-    public static List<Integer> flatten(List<?> nested) {
-        List<Integer> result = new ArrayList<>();
+    public static void flatten(List<?> nested, List<Integer> result) {
         for (Object item : nested) {
             if (item instanceof List<?>) {
-                result.addAll(flatten((List<?>) item));
-            } else if (item instanceof Integer) {
+                flatten((List<?>) item, result);
+            } else {
                 result.add((Integer) item);
             }
         }
-        return result;
     }
 
     public static void main(String[] args) {
         List<Object> nested = Arrays.asList(
                 Arrays.asList(1, 2),
                 Arrays.asList(3, Arrays.asList(4, 5)));
-        System.out.println(flatten(nested));
+        List<Integer> result = new ArrayList<>();
+        flatten(nested, result);
+        System.out.println(result);
     }
 }
